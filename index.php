@@ -1,3 +1,4 @@
+<!-- metodo 1 -->
 <?php
 
 function puzzle($total, $pac) {
@@ -21,5 +22,26 @@ function puzzle($total, $pac) {
         echo $pieza . " ";
     }
 }
+echo "ej1\n";
+// puzzle(5, 4);
+?>
 
-puzzle(5, 3);
+
+<!-- metodo 2 -->
+<?php
+function puzzle2($total, $pac) {
+    $suma_arr1 = 0;
+    $suma_arr2 = 0;
+    $piezas = [];
+    for ($i = 1; $i <= $total; $i++) {
+        $suma_arr1 += $i;
+    }
+    for ($i = 1; $i <= $pac; $i++) {
+        echo "Introduce la pieza: ";
+        $pieza = trim(fgets(STDIN));
+        $suma_arr2 += $pieza;
+        $piezas[] = $pieza;
+    }
+echo "Falta la pieza: " . ($suma_arr1 - $suma_arr2);
+}
+puzzle2(5, 4);
