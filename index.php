@@ -45,3 +45,25 @@ function puzzle2($total, $pac) {
 echo "Falta la pieza: " . ($suma_arr1 - $suma_arr2);
 }
 puzzle2(5, 4);
+
+
+/* metodo 3 */
+<?php
+function puzzle3($total, $pac) {
+    // Calcular la suma de la serie aritmética usando la fórmula
+    $suma_arr1 = ($total * ($total + 1)) / 2;
+
+    $suma_arr2 = 0;
+    $piezas = [];
+    for ($i = 1; $i <= $pac; $i++) {
+        echo "Introduce la pieza: ";
+        $pieza = trim(fgets(STDIN));
+        $suma_arr2 += $pieza;
+        $piezas[] = $pieza;
+    }
+
+    echo "Falta la pieza: " . ($suma_arr1 - $suma_arr2);
+}
+
+puzzle3(5, 4);
+?>
